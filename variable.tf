@@ -1,1 +1,4 @@
-lambda_function_name = "jenkins_role"
+variable "lambda_function_name"{
+  type    = "string"
+  default = "jenkins_role"
+  }
