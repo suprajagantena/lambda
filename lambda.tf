@@ -5,6 +5,13 @@
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
+  source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
+  runtime = "nodejs8.10"
+   environment {
+    variables = {
+      foo = "bar"
+    }
+  }
  
   #depends_on    = ["aws_iam_role_policy_attachment.lambda_logs", "aws_cloudwatch_log_group.example"]
 }
