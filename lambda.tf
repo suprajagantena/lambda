@@ -1,11 +1,11 @@
 #resource "aws_lambda_function" "test_lambda" {
 #function_name = "var.lambda_function_name"
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "lambda_function_payload.zip"
+ # filename      = "lambda_function_payload.zip"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
-  source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
+ # source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
   runtime = "nodejs8.10"
    environment {
     variables = {
