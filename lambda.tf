@@ -1,5 +1,10 @@
-resource "aws_lambda_function" "test_lambda" {
-  function_name = "var.lambda_function_name"
+#resource "aws_lambda_function" "test_lambda" {
+#function_name = "var.lambda_function_name"
+  resource "aws_lambda_function" "test_lambda" {
+  filename      = "lambda_function_payload.zip"
+  function_name = "lambda_function_name"
+  role          = ""
+  handler       = "exports.test"
  
   #depends_on    = ["aws_iam_role_policy_attachment.lambda_logs", "aws_cloudwatch_log_group.example"]
 }
