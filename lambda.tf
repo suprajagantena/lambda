@@ -9,10 +9,10 @@ resource "aws_cloudwatch_log_group" "example" {
   retention_in_days = 14
 }
 
-resource "aws_iam_policy" "lambda_logging" {
-  name = "lambda_logging"
-  path = "/"
-  description = "IAM policy for logging from a lambda"
+#resource "aws_iam_policy" "lambda_logging" {
+ #name = "lambda_logging"
+  #path = "/"
+  #description = "IAM policy for logging from a lambda"
 
 {
   "Version": "2012-10-17",
@@ -28,7 +28,7 @@ resource "aws_iam_policy" "lambda_logging" {
     }
   ]
 }
-}
+#}
 
 #resource "aws_iam_role_policy_attachment" "lambda_logs" {
 #role = "${aws_iam_role.iam_for_lambda.name}"
