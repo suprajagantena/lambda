@@ -14,9 +14,6 @@ resource "aws_cloudwatch_log_group" "example" {
   #path = "/"
   #description = "IAM policy for logging from a lambda"
 
-{
-  "Version": "2012-10-17",
-  "Statement": [
     {
       "Action": [
         "logs:CreateLogGroup",
@@ -26,7 +23,7 @@ resource "aws_cloudwatch_log_group" "example" {
       "Resource": "arn:aws:logs:*:*:*",
       "Effect": "Allow"
     }
-  ]
+  
 }
 #}
 
