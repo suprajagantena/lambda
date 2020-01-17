@@ -1,5 +1,9 @@
 #resource "aws_lambda_function" "test_lambda" {
 #function_name = "var.lambda_function_name"
+provider "aws" {
+  region = "us-east-1"
+  version = "~> 2.0"
+}
   resource "aws_lambda_function" "test_lambda" {
  # filename      = "lambda_function_payload.zip"
   function_name = "lambda_function_name"
