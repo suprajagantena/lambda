@@ -5,7 +5,8 @@ provider "aws" {
   version = "~> 2.0"
 }
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "lambda_function.zip"
+ # filename      = "lambda_function.zip"
+  s3 = "lambdafunction234"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
