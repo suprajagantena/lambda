@@ -7,12 +7,12 @@ data "archive_file" "lambda" {
   output_path = "local.lambda_zip_location"
 }
 
-  resource "aws_lambda_function" "my_lambda67834521" {
+  resource "aws_lambda_function" "my_lambda_a" {
   filename      = "local.lambda_zip_location"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
   #s3_object_version = "disabled"
-  function_name = "my_lambda67834521"
+  function_name = "my_lambda_a"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "lambda.test"
   #source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
