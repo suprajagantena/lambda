@@ -1,19 +1,23 @@
-data "archive_file" "init" {
+locals {
+  lambda_zip_location ="outputs/lambda.zip"
+  
+  }
+data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/init.tpl"
-  output_path = "${path.module}/files/init.zip"
+  source_file = "lambda.py"
+  output_path = "${lambda_zip_location}"
 }
 
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "lambda.py.zip"
+  filename      = "${local.lambda_zip_location}"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
   #s3_object_version = "disabled"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
-  handler       = "exports.test"
+  handler       = "lambda.test"
   source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
-  runtime = "nodejs8.10"
+  runtime = "python3.7"
    environment {
     variables = {
       foo = "bar"
