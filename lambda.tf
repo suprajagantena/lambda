@@ -16,7 +16,7 @@ data "archive_file" "lambda" {
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "lambda.test"
-  source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
+  #source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
   runtime = "python3.7"
    environment {
     variables = {
