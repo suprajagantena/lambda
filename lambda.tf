@@ -8,7 +8,7 @@ provider "aws" {
  # filename      = "lambda_function.zip"
   s3_bucket = "lambdafunction234"
   s3_key = "key"
-  #s3_
+  s3_object_version = "disabled"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
