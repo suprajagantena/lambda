@@ -13,7 +13,7 @@ data "archive_file" "lambda" {
   #s3_key = "key"
   #s3_object_version = "disabled"
   function_name = "my_lambda_a"
-  role          = "aws_iam_role.jenkins.arn"
+  role          = "arn:aws:iam::546366803473:role/jenkins"
   handler       = "lambda.test"
   #source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
   runtime = "python3.7"
