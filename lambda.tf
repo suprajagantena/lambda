@@ -7,7 +7,7 @@ data "archive_file" "lambda" {
   output_path = "local.lambda_zip_location"
 }
 
-  resource "aws_lambda_function" "test_lambda" {
+  resource "aws_lambda_function" "test456789_lambda" {
   filename      = "local.lambda_zip_location"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
