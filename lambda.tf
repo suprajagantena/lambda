@@ -5,14 +5,14 @@ provider "aws" {
   version = "~> 2.0"
 }
   resource "aws_lambda_function" "test_lambda" {
- # filename      = "lambda_function.zip"
-  s3_bucket = "lambdafunction234"
-  s3_key = "key"
-  s3_object_version = "disabled"
+  filename      = "lambda_function.zip"
+  #s3_bucket = "lambdafunction234"
+  #s3_key = "key"
+  #s3_object_version = "disabled"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
- # source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
+  source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
   runtime = "nodejs8.10"
    environment {
     variables = {
