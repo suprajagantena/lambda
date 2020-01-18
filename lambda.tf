@@ -1,15 +1,14 @@
 locals {
   lambda_zip_location ="outputs/lambda.zip"
-  
   }
 data "archive_file" "lambda" {
   type        = "zip"
   source_file = "lambda.py"
-  output_path = "lambda_zip_location"
+  output_path = "local.lambda_zip_location"
 }
 
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "locals.lambda_zip_location"
+  filename      = "local.lambda_zip_location"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
   #s3_object_version = "disabled"
@@ -18,9 +17,7 @@ data "archive_file" "lambda" {
   handler       = "lambda.test"
   #source_code_hash = "${filebase64sha256("lambda_function_payload.zip")}"
   runtime = "python3.7"
-   environment {
-    variables = {
-      foo = "bar"
+    
     }
   }
  
