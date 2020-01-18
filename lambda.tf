@@ -5,7 +5,7 @@ provider "aws" {
   version = "~> 2.0"
 }
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "lambda_function.zip"
+  filename      = "lambda.py.zip"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
   #s3_object_version = "disabled"
