@@ -6,7 +6,7 @@ provider "aws" {
 }
   resource "aws_lambda_function" "test_lambda" {
  # filename      = "lambda_function.zip"
-  filename = "lambdafunction234"
+  s3_bucket = "lambdafunction234"
   function_name = "lambda_function_name"
   role          = "aws_iam_role.jenkins.arn"
   handler       = "exports.test"
