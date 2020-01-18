@@ -9,7 +9,7 @@ data "archive_file" "lambda" {
 }
 
   resource "aws_lambda_function" "test_lambda" {
-  filename      = "local.lambda_zip_location"
+  filename      = "locals.lambda_zip_location"
   #s3_bucket = "lambdafunction234"
   #s3_key = "key"
   #s3_object_version = "disabled"
